@@ -195,6 +195,8 @@ explore: persons2 {}
 
 explore: products {}
 
+explore: productgroup {}
+
 explore: salary {
   join: dept {
     type: left_outer
@@ -298,3 +300,10 @@ explore: xss_test_7 {}
 explore: xss_test_8 {}
 
 explore: xss_test_9 {}
+
+explore: view1 {
+  join: products {
+    sql_on: ${view1.products_category} = ${products.category} ;;
+    relationship: one_to_one
+  }
+}
